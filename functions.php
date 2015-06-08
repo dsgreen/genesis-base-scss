@@ -30,6 +30,7 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 //* Change the footer text
 add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
 function sp_footer_creds_filter( $creds ) {
-    $creds = '[footer_copyright] Copyright Name. All Rights Reserved.';
+    $copyright_name = 'Your Name';
+    $creds = '[footer_copyright] Copyright ' . $copyright_name . '. All Rights Reserved.';
     return $creds;
 }
