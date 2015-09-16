@@ -24,6 +24,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	- Gallery
 	- Forms
 	- Tables
+	- Screen reader text
 - Structure and Layout
 	- Site Containers
 	- Column Widths and Positions
@@ -39,10 +40,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 - Plugins
 	- Genesis eNews Extended
 	- Jetpack
+- Skip Links
 - Site Header
 	- Title Area
 	- Widget Area
 - Site Navigation
+	- Accessible menu
 	- Header Navigation
 	- Primary Navigation
 	- Secondary Navigation
@@ -167,7 +170,8 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
 	color: #333;
 }
 
@@ -325,7 +329,8 @@ img {
 	padding: 4px;
 }
 
-.gallery img:hover {
+.gallery img:hover,
+.gallery img:focus {
 	border: 1px solid #999;
 }
 
@@ -396,12 +401,18 @@ button:hover,
 input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"],
-.button:hover {
+.button:hover,
+button:focus,
+input:focus[type="button"],
+input:focus[type="reset"],
+input:focus[type="submit"],
+.button:focus {
 	background-color: #e5554e;
 	color: #fff;
 }
 
-.entry-content .button:hover {
+.entry-content .button:hover,
+.entry-content .button:focus {
 	color: #fff;
 }
 
@@ -409,7 +420,12 @@ input:hover[type="submit"],
 .footer-widgets input:hover[type="button"],
 .footer-widgets input:hover[type="reset"],
 .footer-widgets input:hover[type="submit"],
-.footer-widgets .button:hover {
+.footer-widgets .button:hover,
+.footer-widgets button:focus,
+.footer-widgets input:focus[type="button"],
+.footer-widgets input:focus[type="reset"],
+.footer-widgets input:focus[type="submit"],
+.footer-widgets .button:focus {
 	background-color: #fff;
 	color: #333;
 }
@@ -450,6 +466,42 @@ td {
 
 th {
 	font-weight: 400;
+}
+
+/* ## Screen reader text
+--------------------------------------------- */
+
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+	color: #333;
+	background: #fff;
+}
+
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.genesis-nav-menu .search input[type="submit"]:focus,
+.widget_search input[type="submit"]:focus  {
+	clip: auto !important;
+	height: auto;
+	width: auto;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 15px 23px 14px;
+	z-index: 100000; /* Above WP toolbar. */
+	text-decoration: none;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+}
+
+.more-link {
+    position: relative;
 }
 
 
@@ -758,7 +810,8 @@ th {
 	color: #333;
 }
 
-.entry-title a:hover {
+.entry-title a:hover,
+.entry-title a:focus  {
 	color: #e5554e;
 }
 
@@ -915,7 +968,8 @@ img.alignright,
 	width: 100%;
 }
 
-.enews-widget input:hover[type="submit"] {
+.enews-widget input:hover[type="submit"],
+.enews-widget input:focus[type="submit"]  {
 	background-color: #fff;
 	color: #333;
 }
@@ -931,6 +985,24 @@ img.alignright,
 	display: none;
 }
 
+
+/* # Skip Links
+---------------------------------------------------------------------------------------------------- */
+.genesis-skip-link {
+	margin: 0;
+}
+
+.genesis-skip-link li {
+	height: 0;
+	width: 0;
+	list-style: none;
+}
+
+/* Display outline on focus */
+:focus {
+	color: #333;
+	outline: #ccc solid 1px;
+}
 
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -964,7 +1036,8 @@ img.alignright,
 }
 
 .site-title a,
-.site-title a:hover {
+.site-title a:hover,
+.site-title a:focus {
 	color: #333;
 }
 
@@ -1024,8 +1097,10 @@ img.alignright,
 }
 
 .genesis-nav-menu a:hover,
+.genesis-nav-menu a:focus,
 .genesis-nav-menu .current-menu-item > a,
-.genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.genesis-nav-menu .sub-menu .current-menu-item > a:focus  {
 	color: #e5554e;
 }
 
@@ -1056,11 +1131,13 @@ img.alignright,
 	margin: -55px 0 0 199px;
 }
 
-.genesis-nav-menu .menu-item:hover {
+.genesis-nav-menu .menu-item:hover,
+.genesis-nav-menu .menu-item:focus {
 	position: static;
 }
 
-.genesis-nav-menu .menu-item:hover > .sub-menu {
+.genesis-nav-menu .menu-item:hover > .sub-menu,
+.genesis-nav-menu .menu-item:focus > .sub-menu {
 	left: auto;
 	opacity: 1;
 }
@@ -1091,6 +1168,19 @@ img.alignright,
 
 .genesis-nav-menu > .search {
 	padding: 10px 0 0;
+}
+
+/* ## Accessible Menu
+--------------------------------------------- */
+
+.menu .menu-item:focus {
+	position: static;
+}
+
+.menu .menu-item > a:focus + ul.sub-menu,
+.menu .menu-item.sfHover > ul.sub-menu {
+	left: auto;
+	opacity: 1;
 }
 
 /* ## Site Header Navigation
@@ -1124,8 +1214,10 @@ img.alignright,
 }
 
 .nav-primary .genesis-nav-menu a:hover,
+.nav-primary .genesis-nav-menu a:focus,
 .nav-primary .genesis-nav-menu .current-menu-item > a,
-.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus {
 	color: #e5554e;
 }
 
@@ -1229,6 +1321,7 @@ p.entry-meta {
 }
 
 .archive-pagination li a:hover,
+.archive-pagination li a:focus,
 .archive-pagination .active a {
 	background-color: #e5554e;
 }
@@ -1348,7 +1441,8 @@ li.comment {
 }
 
 .footer-widgets a.button,
-.footer-widgets a:hover {
+.footer-widgets a:hover,
+.footer-widgets a:focus {
 	color: #fff;
 }
 
