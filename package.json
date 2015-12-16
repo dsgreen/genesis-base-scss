@@ -1,0 +1,31 @@
+{
+  "name": "genesis-base",
+  "version": "2.2.2",
+  "description": "The Genesis sample theme with Sass and Grunt.",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsgreen/genesis-base.git"
+  },
+  "keywords": [
+    "Genesis",
+    "WordPress",
+    "Sass",
+    "Grunt"
+  ],
+  "author": "Douglas Green",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/dsgreen/genesis-base/issues"
+  },
+  "homepage": "https://github.com/dsgreen/genesis-base#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.1.0"
+  }
+}
