@@ -346,19 +346,9 @@ textarea:focus,
   transition: all 0.1s ease-in-out;
 }
 
-::-moz-selection {
-  background-color: #333;
-  color: #fff;
-}
-
-::selection {
-  background-color: #333;
-  color: #fff;
-}
-
 a {
-  color: #e5554e;
-  text-decoration: none;
+  color: #c3251d;
+  text-decoration: underline;
 }
 
 a:hover,
@@ -606,7 +596,7 @@ input:focus[type="button"],
 input:focus[type="reset"],
 input:focus[type="submit"],
 .button:focus {
-  background-color: #e5554e;
+  background-color: #c3251d;
   color: #fff;
 }
 
@@ -620,7 +610,7 @@ input:focus[type="submit"],
 .footer-widgets input[type="reset"],
 .footer-widgets input[type="submit"],
 .footer-widgets .button {
-  background-color: #e5554e;
+  background-color: #c3251d;
   color: #fff;
 }
 
@@ -715,7 +705,6 @@ th {
 ---------------------------------------------------------------------------------------------------- */
 /* ## Site Containers
 --------------------------------------------- */
-.breadcrumb,
 .site-inner,
 .wrap {
   margin: 0 auto;
@@ -724,6 +713,7 @@ th {
 
 .site-inner {
   clear: both;
+  padding-top: 40px;
 }
 
 /* ## Column Widths and Positions
@@ -842,94 +832,6 @@ th {
   margin-left: 0;
 }
 
-/* BS3 grid */
-.row {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  float: left;
-}
-
-.col-1.nested,
-.col-2.nested,
-.col-3.nested,
-.col-4.nested,
-.col-5.nested,
-.col-6.nested,
-.col-7.nested,
-.col-8.nested,
-.col-9.nested,
-.col-10.nested,
-.col-11.nested,
-.col-12.nested {
-  padding-left: 0;
-}
-
-.col-12 {
-  width: 100%;
-}
-
-.col-11 {
-  width: 91.66666667%;
-}
-
-.col-10 {
-  width: 83.33333333%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-8 {
-  width: 66.66666667%;
-}
-
-.col-7 {
-  width: 58.33333333%;
-}
-
-.col-6 {
-  width: 50%;
-}
-
-.col-5 {
-  width: 41.66666667%;
-}
-
-.col-4 {
-  width: 33.33333333%;
-}
-
-.col-3 {
-  width: 25%;
-}
-
-.col-2 {
-  width: 16.66666667%;
-}
-
-.col-1 {
-  width: 8.33333333%;
-}
-
 /* # Common Classes
 ---------------------------------------------------------------------------------------------------- */
 /* ## Avatar
@@ -954,8 +856,7 @@ th {
 /* ## Genesis
 --------------------------------------------- */
 .breadcrumb {
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .archive-description,
@@ -1024,7 +925,7 @@ th {
 
 .entry-title a:hover,
 .entry-title a:focus {
-  color: #e5554e;
+  color: #c3251d;
 }
 
 .widget-title {
@@ -1174,7 +1075,7 @@ img.alignright,
 }
 
 .enews-widget input[type="submit"] {
-  background-color: #e5554e;
+  background-color: #c3251d;
   color: #fff;
   margin: 0;
   width: 100%;
@@ -1310,7 +1211,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus {
-  color: #e5554e;
+  color: #c3251d;
   text-decoration: underline;
 }
 
@@ -1413,19 +1314,26 @@ img.alignright,
 }
 
 .nav-primary .genesis-nav-menu a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.nav-primary .genesis-nav-menu a:hover,
+.nav-primary .genesis-nav-menu a:focus,
+.nav-primary .genesis-nav-menu .current-menu-item > a {
   color: #fff;
+  text-decoration: underline;
 }
 
 .nav-primary .genesis-nav-menu .sub-menu a {
   color: #333;
 }
 
-.nav-primary .genesis-nav-menu a:hover,
-.nav-primary .genesis-nav-menu a:focus,
-.nav-primary .genesis-nav-menu .current-menu-item > a,
-.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
-.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus {
-  color: #e5554e;
+.nav-primary .genesis-nav-menu .sub-menu a:hover,
+.nav-primary .genesis-nav-menu .sub-menu a:focus,
+.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a {
+  color: #c3251d;
+  text-decoration: underline;
 }
 
 /* ## Secondary Navigation
@@ -1527,7 +1435,7 @@ p.entry-meta {
 .archive-pagination li a:hover,
 .archive-pagination li a:focus,
 .archive-pagination .active a {
-  background-color: #e5554e;
+  background-color: #c3251d;
   text-decoration: underline;
 }
 
@@ -1699,7 +1607,6 @@ li.comment {
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 @media only screen and (max-width: 1200px) {
-  .breadcrumb,
   .site-inner,
   .wrap {
     max-width: 960px;
@@ -1735,7 +1642,6 @@ li.comment {
 }
 
 @media only screen and (max-width: 960px) {
-  .breadcrumb,
   .site-inner,
   .wrap {
     max-width: 800px;
@@ -1796,7 +1702,6 @@ li.comment {
     font-size: 16px;
     font-size: 1.6rem;
   }
-  .breadcrumb,
   .site-inner,
   .wrap {
     padding-left: 5%;
@@ -1825,19 +1730,7 @@ li.comment {
   .three-sixths,
   .two-fourths,
   .two-sixths,
-  .two-thirds,
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6,
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10,
-  .col-11,
-  .col-12 {
+  .two-thirds {
     margin: 0;
     width: 100%;
   }
