@@ -24,7 +24,8 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          outputStyle: 'expanded'
+          outputStyle: 'expanded',
+          sourceMap: true
         },
         files: {
           'style.css' : 'src/scss/style.scss'
@@ -40,6 +41,9 @@ module.exports = function(grunt) {
       }
     },
     watch: {
+      options: {
+        livereload: true
+      },
       /*js: {
         files: ['src/js/*.js'],
         tasks: ['uglify:dev']
