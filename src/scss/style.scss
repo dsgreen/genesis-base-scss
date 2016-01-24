@@ -67,19 +67,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 - Print Styles
 */
 
-@import "inc/vars";
-@import "inc/reset";
-@import "inc/defaults";
-@import "inc/layout";
-@import "inc/common";
-@import "inc/widgets";
-@import "inc/plugins";
-@import "inc/skiplink";
-@import "inc/header";
-@import "inc/navigation";
-@import "inc/content";
-@import "inc/sidebar";
-@import "inc/footer";
-@import "inc/custom";
-@import "inc/mediaqueries";
-@import "inc/print";
+@import "inc/00-vars";
+@import "inc/01-reset";
+@import "inc/02-defaults";
+@import "inc/03-layout";
+@import "inc/04-common";
+@import "inc/05-widgets";
+@import "inc/06-plugins";
+@import "inc/07-skiplink";
+@import "inc/08-header";
+@import "inc/09-navigation";
+@import "inc/10-content";
+@import "inc/11-sidebar";
+@import "inc/12-footer";
+@import "inc/13-custom";
+@import "inc/14-mediaqueries";
+@import "inc/15-print";
